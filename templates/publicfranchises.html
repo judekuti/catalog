@@ -1,0 +1,63 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="container-fluid" style="height:100vh;">
+        <div class="row" style="background-size:contain;background-repeat:no-repeat;">
+            <div class="col-md-12">
+
+            {% include "navbar.html" %}
+
+                <header style="background-position:center;height:100vh;background-size:contain;background-image:url(&quot;/static/img/basketball.png&quot;);">
+                    <ul class="nav nav-tabs categories" style="background-color:rgba(0,0,0,0.6);margin-bottom:5px;font-size:15px;font-weight:bold;font-family:'Architects Daughter', cursive;">
+                        <li class="active" style="background-color:rgba(0,0,0,0.6);margin-right:5px;">
+                            {% if 'username' not in session %}
+                            <a href="{{url_for('showLogin')}}" style="font-family:'Architects Daughter', cursive;">Login </a>
+                            {% else %}
+                            <a href="{{url_for('disconnect')}}">Logout </a>
+                            {% endif %}
+
+                        <li><a href="{{url_for('home')}}" style="background-color:rgba(0,0,0,0.6);">Home </a></li>
+                        <li><a href="{{url_for('showLogin')}}" style="background-color:rgba(0,0,0,0.6);">C'mon Login</a></li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 style="font-family:'Architects Daughter', cursive;">{% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <ul>
+                    {% for message in messages %}
+                    <li> <strong> {{ message }} </strong> </li>
+                    {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endwith %}</h4>
+                        </div>
+                    </div>
+                    <form class="search-form" style="margin:0px;margin-bottom:5px;">
+                        <div class="input-group">
+                            <div class="input-group-addon"><span><i class="glyphicon glyphicon-search"></i></span></div><input class="form-control" type="text" placeholder="Search for a franchise here" style="height:35px;background-color:rgba(0,0,0,0.6);color:#ffffff;padding-left:10px;">
+                            <div
+                                class="input-group-btn"><a class="btn btn-default" role="button" href="#" style="margin-left:0px;">Search </a></div>
+            </div>
+            </form>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-family:'Architects Daughter', cursive;color:#333333;">All Franchises</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                {% for franchise in franchises %}
+                <div class="col-md-6">
+                    <ul class="list-group">
+                            <a href="{{url_for('displayRoster', franchise_id = franchise.id)}}"><li class="list-group-item" style="background-color:rgba(0,0,0,0.6);font-size: 16px;"><strong>{{franchise.name}}</strong><span class="badge">{{franchise.conference}}</span></li></a>
+                        </ul>
+                </div>
+                {% endfor %}
+            </div>
+
+            </header>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

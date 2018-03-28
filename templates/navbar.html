@@ -1,0 +1,22 @@
+
+                <nav class="navbar navbar-default" style="margin-bottom:5px;">
+                    <div class="container">
+                        <div class="navbar-header"><a class="navbar-brand" href="#" style="margin-top:10px;"><span class="text-title" style="font-family:'Architects Daughter', cursive;padding-left:10px;text-shadow: 2px 3px 4px #000000; font-size:48px;padding-top:0px;margin-top:0px;padding-bottom:0px;">GAMERS NBA...</span></a>
+                            <button
+                                class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navcol-1">
+                            <ul class="nav navbar-nav navbar-right" style="font-size:16px;">
+                                <li class="active" role="presentation"><a href="http://www.nba.com/allstar" target="_blank" style="font-family:'Architects Daughter', cursive;">2018 All Stars</a></li>
+                                <li role="presentation"><a href="{{url_for('displayFranchises')}}" style="font-family:'Architects Daughter', cursive;">Display Franchises</a></li>
+                        <li role="presentation">
+                            {% if 'username' not in session %}
+                            <a href="{{url_for('showLogin')}}" style="font-family:'Architects Daughter', cursive;">Login </a>
+                            {% else %}
+                            <a href="{{url_for('disconnect')}}" style="font-family:'Architects Daughter', cursive;">Logout </a>
+                            {% endif %}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+

@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+{% block content %}
+
+    <div class="container-fluid" style="height:100vh;">
+        <div class="row" style="background-image:url(&quot;/static/img/court.jpg&quot;);background-size:cover;background-repeat:no-repeat;height:100vh;">
+            <div class="col-md-12" style="height:100vh;">
+
+                {% include "navbar.html" %}
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="lead" style="color:rgba(0,0,0,0.4);font-family:'Architects Daughter', cursive;width:500px;background-position:center;margin:0px;margin-left:40px;margin-top:0px;font-style:normal;font-weight:normal;">...more concepts by judekuti</p>
+                    </div>
+                </div>
+                <header data-bs-hover-animate="tada" style="background-position:top;height:465px;background-size:auto;background-image:url(&quot;/static/img/ball.png&quot;);">
+                    <div class="col-md-1"><a href="https://www.facebook.com/" target="_blank"><img class="img-responsive" src="/static/img/facebook.png" alt="link to facebook" style="width:90px;height:70px;"></a><a href="https://twitter.com/" target="_blank"><img class="img-responsive" src="/static/img/twitter.png" alt="link to twitter" style="width:90px;height:70px;"></a>
+                        <a
+                            href="https://www.instagram.com/" target="_blank"><img class="img-responsive" src="/static/img/instagram.png" alt="link to instagram" style="width:90px;height:70px;"></a><a href="mailto:judekuti@gmail.com"><img class="img-responsive" src="/static/img/email.png" alt="Mail Jude Kuti" style="width:90px;height:70px;"></a></div>
+                    <div
+                        class="col-md-11">
+                        <h4 style="font-family:'Architects Daughter', cursive;color:#ffffff;">{% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                {% for message in messages %}
+                <li> <strong> {{ message }} </strong> </li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            {% endwith %}</h4>
+            </div>
+            </header>
+        </div>
+    </div>
+    </div>
+    {% endblock %}

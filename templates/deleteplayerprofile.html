@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+{% block content %}
+
+    <div class="container-fluid post" style="height:100vh;font-family:'Architects Daughter', cursive;">
+        <div class="row" style="background-image:url(&quot;/static/img/lilliard.png&quot;);background-size:cover;background-repeat:no-repeat;height:100vh;background-position:top;background-color:rgba(0,0,0,0.6);">
+
+            <div class="col-md-12" style="height:100vh;">
+            {% include "navbar.html" %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="lead" style="color:#ffffff;font-family:'Architects Daughter', cursive;width:500px;background-position:center;margin:0px;margin-left:40px;margin-top:0px;font-style:normal;font-weight:normal;">...by judekuti for Udacity Item-Catalog Project</p>
+                    </div>
+                </div>
+                    <div class="col-md-1"><a href="https://www.facebook.com/" target="_blank"><img class="img-responsive" src="/static/img/facebook.png" alt="link to facebook" data-bs-hover-animate="rubberBand" style="width:90px;height:70px;"></a><a href="https://twitter.com/" target="_blank"><img class="img-responsive" src="/static/img/twitter.png" alt="link to twitter" data-bs-hover-animate="pulse" style="width:90px;height:70px;"></a>
+                        <a
+                            href="https://www.instagram.com/" target="_blank"><img class="img-responsive" src="/static/img/instagram.png" alt="link to instagram" data-bs-hover-animate="tada" style="width:90px;height:70px;"></a><a href="mailto:judekuti@gmail.com"><img class="img-responsive" src="/static/img/email.png" alt="Mail Jude Kuti" data-bs-hover-animate="jello" style="width:90px;height:70px;"></a>
+                        </div>
+                    <div class="col-md-11">
+                        <h3 class="text-center" style="background-color:rgba(0,0,0,0.6);color:#ffffff;">Are you sure you would like to delete {{profile.name}}?</h3>
+                </div>
+
+                <form action="#" method = 'post'>
+                    <button type="submit" class="btn btn-default delete" id="submit" type="submit">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete</button>
+                    <a href = '{{url_for('displayFranchises')}}'>
+                        <button class="btn btn-default delete">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+    </a>
+
+</form>
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+    {% endblock %}

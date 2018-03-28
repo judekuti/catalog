@@ -1,0 +1,62 @@
+{% extends "main.html" %}
+{% block content %}
+
+    <div class="container-fluid post" style="height:100vh;background-color:#333333;color:#ffffff;background-image:url(&quot;/static/img/ballline.jpeg&quot;);background-repeat:no-repeat;background-size:cover;">
+
+{% include "navbar.html" %}
+        <div class="row" style="background-color:rgba(0,0,0,0.6);">
+            <div class="col-md-12">
+                <h1 style="color:#ffffff;"> Edit {{ player.name }}'s Profile</h1>
+            </div>
+        </div>
+        <hr>
+        <div class="row" style="background-color:rgba(0,0,0,0.6);">
+            <div class="col-md-12" style="margin-top:20px;">
+                <form action="#" method="post">
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-sm-6" style="color:#ffffff;">
+                                <div class="form-group" style="color:#ffffff;"><label class="control-label" style="color:#ffffff;">Name</label><input class="form-control" type="text" name="name" value="{{player.name}}" style="color:#ffffff;"></div>
+                            </div>
+                            <div class="col-sm-6"><select class="form-control" name ="position" style="color:#ffffff;height:40px;margin-top:25px;"><option value="" selected="">Choose Player's Position</option><option value="Small Forward">Small Forward</option><option value="Point Guard">Point Guard</option><option value="Shooting Guard">Shooting Guard</option><option value="Power Forward">Power Forward</option>
+                            <option value="Center">Center</option></select></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group"><label class="control-label">Height in feet</label><input class="form-control"  name="height" value="{{player.height}}" type="text" style="color:#ffffff;"></div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group"><label class="control-label">Weight in lbs</label><input class="form-control"  name="weight" value="{{player.weight}}" type="text" style="color:#ffffff;"></div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group"><label class="control-label">Salary in USD</label><input class="form-control"  name="price" value="{{player.price}}" type="text" style="color:#ffffff;"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group"><label class="control-label">Age</label><input class="form-control" name="age" value="{{player.age}}" type="text" style="color:#ffffff;"></div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group"><label class="control-label">Points Per Game</label><input class="form-control" name="ppg" value="{{player.ppg}}" type="text" style="color:#ffffff;"></div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group"><label class="control-label">Assists Per Game</label><input class="form-control" value="disabled" type="text" style="color:#ffffff;" disabled></div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group"><label class="control-label">Blocks Per Game</label><input class="form-control" value="disabled" type="text" style="color:#ffffff;" disabled></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="avatar">
+                            <div class="avatar-bg center" style="background-color:#333333;margin-bottom:10px;"></div>
+                        </div><input type="file" class="form-control" name="image" accept="image/*" style="color:#ffffff;background-color:rgba(0,0,0,0.6);">
+                    </div>
+                    <div class="col-md-6"><button class="btn btn-default btn-block" type="reset">reset </button></div>
+                    <div class="col-md-6"><button class="btn btn-primary btn-block" type="submit" style="background-color:#333333;">save </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
