@@ -1,6 +1,7 @@
-# Item Catalog CRUD App
+# Catalog
+This is a replica of the Gamers_NBA App but just a prototype to be used to clone a cleaner version of the app for running on the Amazon Lightsail Server configuration 
 
- This web app is a project for the Udacity [FSND Course](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004).
+ 
 
 ---
 
